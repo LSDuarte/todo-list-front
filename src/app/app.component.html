@@ -16,4 +16,18 @@
         </div>
       </div>
     </form>
+    <hr />
+    <div class="row">
+        <div class="col-md-7">
+            <ul class="list-group">
+              <li *ngFor="let todo of todos" class="list-group-item d-flex justify-content-between align-items-start">
+                {{ todo.description }}
+                <div class="btn-group">
+                   <button class="btn btn-success">Done</button>
+                   <button class="btn btn-danger">Delete</button>
+                </div>
+              </li>
+            </ul>
+        </div>
+    </div>
 </div>
