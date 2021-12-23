@@ -14,7 +14,11 @@ export class TodoService {
     private http: HttpClient
   ) { }
 
-  salvar(todo: Todo) : Observable<Todo> {
+  salvar(todo: Todo): Observable<Todo> {
     return this.http.post<Todo>(this.apiUrl, todo);
+  }
+
+  listar(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(this.apiUrl);
   }
 }
