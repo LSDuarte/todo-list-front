@@ -24,7 +24,7 @@
                 {{ todo.description }}
                 <div class="btn-group">
                    <button class="btn btn-success">Done</button>
-                   <button class="btn btn-danger">Delete</button>
+                   <button class="btn btn-danger" (click)="delete(todo)">Delete</button>
                 </div>
               </li>
             </ul>
