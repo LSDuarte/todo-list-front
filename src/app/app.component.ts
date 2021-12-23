@@ -41,9 +41,20 @@ export class AppComponent implements OnInit {
        });
   }
 
+  // tslint:disable-next-line:typedef
   delete(todo: Todo) {
      this.service.deletar(todo.id).subscribe({
       next: (response) => this.listarTodos()
+     });
+  }
+
+  // tslint:disable-next-line:typedef
+  done(todo: Todo) {
+     this.service.marcarComoConcluido(todo.id).subscribe({
+       next: (todoAtualizado) => {
+         todo.done = todoAtualizado.done;
+         todo.doneDate = todoAtualizado.doneDate;
+       }
      });
   }
 }
